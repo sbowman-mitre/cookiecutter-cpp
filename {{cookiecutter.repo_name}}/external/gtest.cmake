@@ -1,18 +1,21 @@
 # GoogleTest (gtest)
 # A unit testing library for C/C++
 # Creates a libgtest target packaged with the required include driectories
-find_package(Threads REQUIRED)
-include(ExternalProject)
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# find_package(Threads REQUIRED)
+# include(ExternalProject)
 
 # Fetch GoogleTest remotely
-ExternalProject_Add(
-    gtest
-    URL https://googletest.googlecode.com/files/gtest-1.7.0.zip
-    URL_MD5 2d6ec8ccdf5c46b05ba54a9fd1d130d7
-    PREFIX ${CMAKE_CURRENT_BINARY_DIR}
-    # Disable INSTALL
-    INSTALL_COMMAND ""
-)
+# ExternalProject_Add(
+#     gtest
+#     URL https://googletest.googlecode.com/files/gtest-1.7.0.zip
+#     URL_MD5 2d6ec8ccdf5c46b05ba54a9fd1d130d7
+#     PREFIX ${CMAKE_CURRENT_BINARY_DIR}
+#     # Disable INSTALL
+#     INSTALL_COMMAND ""
+# )
 add_library(libgtest IMPORTED STATIC GLOBAL)
 add_dependencies(libgtest gtest)
 

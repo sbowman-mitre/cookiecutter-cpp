@@ -5,9 +5,9 @@
     "check_style": true,
     "pedantic": true,
     "version": "0.0.1",
-    "year": 2015,
+    "year": 2017,
     "author": "First Last",
-    "email": "{{ cookiecutter.author.split()|join('.')|lower }}@gmail.com",
+    "email": "{{ cookiecutter.author.split()|join('.')|lower }}@mitre.org",
     "username": "{{ cookiecutter.author|first|lower }}{{ cookiecutter.author.split()|last|lower }}",
     "branch": "master",
     "remote": "origin"
